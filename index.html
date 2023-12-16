@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Todo App</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .todo-container {
+      width: 300px;
+      text-align: center;
+    }
+    .btn-danger {
+      margin-left: 8rem;
+    }
+  </style>
+</head>
+<body>
+
+<div class="todo-container">
+  <h2 class="mb-4">Todo List</h2>
+
+  <form id="addForm">
+    <div class="input-group mb-3">
+      <input type="text" id="item" class="form-control" placeholder="Add a new item">
+      <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">Add</button>
+      </div>
+    </div>
+  </form>   
+
+  <input type="text" id="filter" class="form-control mb-3" placeholder="Search items">
+
+  <ul id="items" class="list-group">
+    <li id="list-item" class="list-group-item  align-items-center">
+      Item 1
+      <button id="btn-delete" class="btn btn-danger btn-sm">Delete</button>
+    </li>
+    <li class="list-group-item  align-items-center">
+      Item 2
+      <button id="btn-delete" class="btn btn-danger btn-sm">Delete</button>
+    </li>
+    <li class="list-group-item n align-items-center">
+      Item 3
+      <button id="btn-delete" class="btn btn-danger btn-sm">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<script src="todo.js"></script>
+</body>
+</html>
+ 
+
