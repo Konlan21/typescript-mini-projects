@@ -59,5 +59,6 @@ function filterItems(e){
 
 }
 
-filterInput.addEventListener('keyup', filterItems)
+
+filterInput.addEventListener('keyup', filterItems);
 

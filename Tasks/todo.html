@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Add custom CSS styles here */
+        .list-group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-danger {
+            order: 2; /* Change the order of the button */
+            margin-left: 10px; /* Add margin for spacing */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2 class="text-center">Todo App</h2>
+
+    <!-- Search Input -->
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search todo items" id="searchInput">
+    </div>
+
+    <!-- Add Item Input -->
+    <form id="addItemForm">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Add a new todo item" id="addItemInput">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Add Item</button>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- Todo List -->
+    <ul class="list-group" id="todoList">
+        <li class="list-group-item">
+            Item 1
+            <button class="btn btn-danger btn-sm">Delete</button>
+        </li>
+        <li class="list-group-item">
+            Item 2
+            <button id="delete-btn" class="btn btn-danger btn-sm">Delete</button>
+        </li>
+        <li class="list-group-item">
+            Item 3
+            <button id="delete-btn" class="btn btn-danger btn-sm">Delete</button>
+        </li>
+    </ul>
+</div>
+
+<!-- Add Bootstrap JS and Popper.js scripts here -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
