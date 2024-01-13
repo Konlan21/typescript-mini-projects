@@ -8,7 +8,7 @@ class Account {
     }
     deposit(amount) {
         if (amount <= 0) {
-            throw ('Deposite amount cannot be less than 0');
+            throw new Error('Deposite amount cannot be less than 0');
         }
         else {
             console.log(this.balance += amount);
@@ -16,7 +16,7 @@ class Account {
     }
     widraw(amount) {
         if (amount > this.balance) {
-            throw ('Invalid amount cannot withdraw more than balance');
+            throw new Error('Invalid amount cannot withdraw more than balance');
         }
         else {
             console.log(this.balance - amount);
