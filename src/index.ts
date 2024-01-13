@@ -1,11 +1,36 @@
-type Customer = {
-    birthday: Date
+
+
+class Account{
+    readonly id: number;
+    owner: string;
+    balance: number;
+    nickname?: string
+    constructor(id: number, owner: string, balance: number, nickname?: string){
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+        this.nickname = nickname;
+    }
+    deposit(amount: number){
+        if(amount <= 0){
+            throw ('Deposite amount cannot be less than 0')
+        } else {
+            console.log(this.balance += amount)
+        }
+    }
+    widraw(amount: number){
+        if (amount > this.balance) {
+            throw ('Invalid amount cannot withdraw more than balance')
+        } else {
+            console.log(this.balance - amount)
+        }
+    }
 }
 
-function getCustomer(id: number): Customer | null {  
-    return id === 0? null : {birthday: new Date()}
-}
+let account1 = new Account(1, 'Konlan', 1000);
+console.log(account1.id)
+console.log(account1.owner)
+console.log(account1.balance)
 
-let customer = getCustomer(0);
-
-console.log(customer?.birthday);
+const newDeposit = account1.deposit(500);
+const newWidrawal = account1.widraw(400);
