@@ -1,32 +1,39 @@
 "use strict";
-class Account {
-    constructor(id, owner, balance, nickname) {
-        this.id = id;
-        this.owner = owner;
-        this.balance = balance;
-        this.nickname = nickname;
+class Person {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
     }
-    deposit(amount) {
-        if (amount <= 0) {
-            throw new Error('Deposite amount cannot be less than 0');
-        }
-        else {
-            console.log(this.balance += amount);
-        }
+    get fullName() {
+        return `${this.firstName}, ${this.lastName}`;
     }
-    widraw(amount) {
-        if (amount > this.balance) {
-            throw new Error('Invalid amount cannot withdraw more than balance');
-        }
-        else {
-            console.log(this.balance - amount);
-        }
+    set fullName(fullName) {
+        fullName = fullName;
     }
 }
-let account1 = new Account(1, 'Konlan', 1000);
-console.log(account1.id);
-console.log(account1.owner);
-console.log(account1.balance);
-const newDeposit = account1.deposit(500);
-const newWidrawal = account1.widraw(400);
+class Student extends Person {
+    constructor(id, email, firstName, lastName, age) {
+        super(firstName, lastName, age);
+        this.id = id;
+        this.email = email;
+        this.age = age;
+    }
+    register() {
+        console.log('Student is registering');
+    }
+}
+let konlan = new Student(1, 'joe@domain.com', 'John', 'Smith', 1000);
+console.log(konlan.email);
+class Teacher extends Person {
+    constructor(title, firstName, lastName) {
+        super(firstName, lastName);
+        this.title = title;
+    }
+    get fullName() {
+        return `${this.title}, ${super.fullName}`;
+    }
+}
+let john = new Teacher('professor', 'John', 'Doe');
+console.log(john.fullName);
 //# sourceMappingURL=index.js.map

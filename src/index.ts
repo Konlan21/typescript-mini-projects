@@ -1,36 +1,41 @@
-
-
-class Account{
-    readonly id: number;
-    owner: string;
-    balance: number;
-    nickname?: string
-    constructor(id: number, owner: string, balance: number, nickname?: string){
-        this.id = id;
-        this.owner = owner;
-        this.balance = balance;
-        this.nickname = nickname;
+class Person{
+    constructor(private firstName: string, private lastName: string, public age?: number){
     }
-    deposit(amount: number){
-        if(amount <= 0){
-            throw new Error('Deposite amount cannot be less than 0')
-        } else {
-            console.log(this.balance += amount)
-        }
+
+    get fullName(){
+        return `${this.firstName}, ${this.lastName}`
     }
-    widraw(amount: number){
-        if (amount > this.balance) {
-            throw new Error ('Invalid amount cannot withdraw more than balance')
-        } else {
-            console.log(this.balance - amount)
-        }
+
+    set fullName(fullName){
+        fullName = fullName
     }
 }
 
-let account1 = new Account(1, 'Konlan', 1000);
-console.log(account1.id)
-console.log(account1.owner)
-console.log(account1.balance)
+class Student extends Person {
+    constructor(public id: number, public email: string, firstName: string,  lastName: string, public age: number) {
+        super(firstName, lastName, age)
+    }
 
-const newDeposit = account1.deposit(500);
-const newWidrawal = account1.widraw(400);
+    register(){
+        console.log('Student is registering')
+    }
+}
+
+let konlan = new Student(1, 'joe@domain.com', 'John', 'Smith', 1000);
+
+console.log(konlan.email)
+
+
+class Teacher extends Person{
+    constructor(public title: string, firstName: string, lastName: string){
+        super(firstName, lastName)
+    }
+
+    override get fullName(): string {
+        return `${this.title}, ${super.fullName}` 
+    }
+}
+
+let john = new Teacher('professor', 'John', 'Doe')
+
+console.log(john.fullName)
